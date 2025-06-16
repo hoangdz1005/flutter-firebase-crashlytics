@@ -1,12 +1,12 @@
 # flutter_firebase_crashlytics
 
-- Thêm dependencies trong pubspec.yaml
+- Add dependencies in pubspec.yaml
 ```yaml
   firebase_core: ^3.14.0
   firebase_crashlytics: ^4.3.7
 ```
 
-- Trong hàm main
+- In the main function
 ```dart
 WidgetsFlutterBinding.ensureInitialized();
 await Firebase.initializeApp();
@@ -14,10 +14,10 @@ FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 ```
 
 ## Setup android
-- Thêm app android trong project firebase
+- Add the Android app to your Firebase project
 ![](assets/1.png)
 
-- Thêm plugin và dependencies trong app/build.gradle.kts
+- Add the plugin and dependencies in app/build.gradle.kts
 ```kotlin
 id("com.google.gms.google-services")
 ```
@@ -27,25 +27,25 @@ dependencies {
   implementation("com.google.firebase:firebase-analytics")
 }
 ```
-- Thêm plugin trong settings.gradle.kts
+- Add the plugin in settings.gradle.kts
 ```kotlin
 id("org.jetbrains.kotlin.android") version "2.1.0" apply false
 id("com.google.gms.google-services") version "4.4.2" apply false
 ```
-- Crash app log trên firebase
+- Crash logs will appear on Firebase
 ![](assets/5.png)
 
 ## Setup IOS
-- Thêm app ios trong project firebase
+- Add the iOS app to your Firebase project
   ![](assets/2.png)
 
-- Trong Build Settings, đặt giá trị Debug Information Format thành DWARF with dSYM File
+- In Build Settings, set Debug Information Format to DWARF with dSYM File
   ![](assets/7.png)
 
-- Trong Build Phases, chọn New Run Script Phase
+- In Build Phases, choose New Run Script Phase
   ![](assets/8.png)
 
-- Thêm cấu hình như sau
+- Add the following configuration
   ![](assets/9.png)
 
 ``` 
